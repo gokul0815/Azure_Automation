@@ -42,13 +42,13 @@ $ terraform init
 ​
 The plan argument will syntax check the files and prepare the deployment.
 ```bash
-$ terraform plan -out vpc.plan
+$ terraform plan -out private_aks_terraform.plan
 ```
 ​
 Deploy the VPC:
 ​
 ```bash
-$ terraform apply vpc.plan
+$ terraform apply private_aks_terraform.plan
 ```
 ​
 This will deploy the terraform in AWS:
