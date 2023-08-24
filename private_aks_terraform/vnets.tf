@@ -61,6 +61,15 @@ resource "azurerm_subnet" "aks" {
   private_endpoint_network_policies_enabled = true
 }
 
+
+resource "azurerm_subnet" "public_subnet" {
+  name                                      = "public_subnet"
+  resource_group_name                       = azurerm_resource_group.rg.name
+  virtual_network_name                      = azurerm_virtual_network.vnet_aks.name
+  address_prefixes                           = ["10.1.3.0/24"]
+  private_endpoint_network_policies_enabled = true
+}
+
 resource "azurerm_subnet" "utils" {
   name                                      = "snet-utils"
   resource_group_name                       = azurerm_resource_group.rg.name

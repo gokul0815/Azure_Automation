@@ -61,3 +61,64 @@ To destroy the setup done using terraform execute:
 ```bash
 $ terraform destroy
 ```
+
+
+## Sample app deployment
+
+We are using the azure sample app to deployed in this.
+
+Note: The whole setup works on default namespace in helm commands please specify -n namespace to use custom one.
+
+### Create Docker file
+
+Create the docker using the below command.
+
+```bash
+$ git clone https://github.com/Azure-Samples/azure-voting-app-redis.git
+$ cd azure-voting-app-redis/azure-vote/
+$ az acr build --image azure-vote-front:v1 --registry tteacrpvakscac --file Dockerfile .
+```
+
+### Create Helm Charts
+
+Create helm charts using the below command
+
+```bash
+$ helm create azure-vote-front
+```
+
+Update azure-vote-front/Chart.yaml to add a dependency for the redis chart from the https://charts.bitnami.com/bitnami chart repository
+
+
+Update dependency
+
+```bash
+$ helm dependency update azure-vote-front
+```
+
+Update Image
+
+
+Update the docker image which has been published in azure-vote-front/values.yaml
+
+### Helm Install
+
+Using the below command apply the chart
+
+```bash
+$ helm install azure-vote-front azure-vote-front/
+```
+
+It takes a few minutes for the service to return a public IP address. Monitor progress using the kubectl get service command with the --watch argument.
+
+### Helm Install
+
+The above applied setup can be removed using below command.
+
+
+```bash
+$ helm uninstall azure-vote-front
+```
+
+
+
