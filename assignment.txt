@@ -1,0 +1,47 @@
+
+As a candidate for the DevOps Engineer role, you are required to complete a technical task that demonstrates your expertise in deploying and managing resources on Microsoft Azure using Terraform and Kubernetes. This task involves creating a Terraform project to deploy an Azure Kubernetes Cluster in a private subnet. The deployment should utilize an Application Gateway for load balancing, integrate Let's Encrypt for SSL certificates, leverage Azure Vault for managing application secrets, and finally, deploy a sample application using either Helm charts or Kustomize.
+Task Requirements:
+To successfully complete this task, you are required to fulfill the following requirements:
+
+
+Azure Kubernetes Cluster Deployment:
+
+1. Create a Terraform Github project to provision an Azure Kubernetes Cluster.
+2. The Kubernetes cluster must be deployed in a private subnet of a Virtual Network.
+3. Utilize Terraform modules to ensure modularity and maintainability of your code.
+
+Application Gateway Integration:
+
+1. Implement an Azure Application Gateway to act as the entry point for external traffic to the Kubernetes cluster.
+2. Configure the Application Gateway to perform load balancing and route traffic to appropriate backend resources.
+
+
+SSL Certificate Management with Let's Encrypt:
+
+1. Automate the renewal process to ensure the validity of SSL certificates.
+
+Azure Vault for Application Secrets:
+
+1. Utilize Azure Vault to securely manage and store application secrets, such as database credentials, API keys, etc.
+
+Sample Application Deployment:
+
+1. Choose either Helm charts or Kustomize to deploy a sample application onto the Azure Kubernetes Cluster.
+
+2. The sample application can be a simple web service, microservice, or any application that demonstrates your proficiency in Kubernetes resource management.
+
+3. Automate the deployment (feel free to adopt any method)
+
+Evaluation Criteria:
+
+Your solution will be evaluated based on the following criteria:
+1. Completeness: Your solution should fulfill all the specified requirements outlined in the task description.
+2. Architecture and Design: The architecture of the deployed resources and their interactions should be well thought out and aligned with best practices.
+3. Code Quality: Your Terraform code should be well-organized, modular, and maintainable. Use meaningful variable names and comments to enhance readability.
+4. Security: Properly secure sensitive information, such as secrets and certificates, and demonstrate the use of Azure Vault for secret management.
+5. Explanation: Explain your approach, deployment steps. and any important considerations.
+Submission:
+Once you have completed the task, please submit the following (on the next page):
+1. Link to the Terraform code in a Github repository.
+2. Explanation describing your approach
+3. Demonstrate the deployment in your own Azure Account.
